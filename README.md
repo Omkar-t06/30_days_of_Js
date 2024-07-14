@@ -2,3 +2,4 @@
 ## This repo consist of 30 days of JS challenge tasks from Chai and Code channel
 
 - Day 1 : Varibles and Data types
+- Day 2 : Operators
