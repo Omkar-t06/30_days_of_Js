@@ -3,3 +3,4 @@
 
 - Day 1 : Varibles and Data types
 - Day 2 : Operators
+- Day 3 : Control Structures

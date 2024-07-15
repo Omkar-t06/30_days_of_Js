@@ -53,3 +53,9 @@ console.log(a > b || a < b);
 
 // Task 13: Write a program that uses the ! operator to negate a condition and log the result to the console.
 console.log(!(a > b));
+
+// Activity 5: Ternary Operators
+// Task 14: Write a program that uses the ternary operator to check if a number is positive or negative and log the result to the console.
+let posOrNeg = (n) =>  n < 0 ? "negative" : "positive" 
+console.log(posOrNeg(2));
+console.log(posOrNeg(-2));
