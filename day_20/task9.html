@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9 & 10 </title>
+</head>
+<body>
+    <script>
+        function saveToBothStorages(key, value) {
+            localStorage.setItem(key, value);
+            sessionStorage.setItem(key, value);
+            console.log('LocalStorage:', localStorage.getItem(key));
+            console.log('SessionStorage:', sessionStorage.getItem(key));
+        }
+
+        saveToBothStorages('commonKey', 'commonValue');
+
+        ///==================================================================
+        function clearAllStorages() {
+            localStorage.clear();
+            sessionStorage.clear();
+            console.log('LocalStorage:', localStorage);
+            console.log('SessionStorage:', sessionStorage);
+        }
+
+        clearAllStorages();
+    </script>
+</body>
+</html>

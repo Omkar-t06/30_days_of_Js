@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Local Storage</title>
+</head>
+<body>
+    <!-- Task 2: Write a script to save an object to localstorage by converting it to a JSON string. Retrieve and parse the object, then log it -->
+     <script>
+        let myObject = {name: 'Omkar',age: 20};
+        localStorage.setItem("myObject",JSON.stringify(myObject));
+
+        let retrievedStr = JSON.parse(localStorage.getItem("myObject"))
+
+        console.log(retrievedStr);
+     </script>
+</body>
+</html>

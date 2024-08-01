@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5: Session Storage</title>
+</head>
+<body>
+    <!-- Task 5: Write a script to save a string value to sessionstorage and retrieve it. Log the retrieved value -->
+    <!-- Task 8: Write a script to remove an item from sessionsStorage, Log the sessionStorage content before and after removal. -->
+    <script>
+        sessionStorage.setItem("mySessionString","Hello, Session Storage")
+        let retrievedStr = sessionStorage.getItem("mySessionString")
+
+        console.log(retrievedStr);
+        /*<><><><><><><><><>><><><><><><><><><>>><>>><><>>><><><><><><><><>*/
+        console.log(sessionStorage);
+        sessionStorage.removeItem("myString");
+        
+        console.log(sessionStorage);
+    </script>
+</body>
+</html>
