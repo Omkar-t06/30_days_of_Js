@@ -23,5 +23,6 @@
 - Day 20: LocalStorage and SessionStorage
 - Day 20: Leetcode Easy
 - Day 21: Leetcode Medium
+- Day 21: Leetcode Long
 
 -------------------------------
