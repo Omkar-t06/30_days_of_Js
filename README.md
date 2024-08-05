@@ -21,8 +21,8 @@
 - Day 18: Algorithms
 - Day 19: Regular Expressions
 - Day 20: LocalStorage and SessionStorage
-- Day 20: Leetcode Easy
-- Day 21: Leetcode Medium
-- Day 21: Leetcode Long
+- Day 21: Leetcode Easy
+- Day 22: Leetcode Medium
+- Day 23: Leetcode Long
 
 -------------------------------
