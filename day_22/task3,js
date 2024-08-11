@@ -1,0 +1,29 @@
+// Activity 3: Container With Most Water
+
+// Task 3: Solve the "Container With Most Water" problem on LeetCode.
+// Write a function that takes an array of non-negative integers where each integer represents the height of a line drawn at each point. Find two lines that together with the x-axis form a container, such that the container holds the most water. Log the maximum amount of water for a few test cases.
+
+function maxArea(heights) {
+    let max = 0;
+    let left = 0;
+    let right = heights.length - 1;
+
+    while (left < right) {
+        let width = right - left;
+        let minHeight = Math.min(heights[left],heights[right]);
+        max = Math.max(max, width * minHeight);
+
+        if(heights[left] < heights[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return max;
+}
+
+console.log(maxArea([1,8,6,2,5,4,8,3,7])); // 49
+console.log(maxArea([1,1])); // 1
+console.log(maxArea([4,3,2,1,4])); // 16
+console.log(maxArea([1,2,1])); // 2
