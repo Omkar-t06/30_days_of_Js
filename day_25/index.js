@@ -63,25 +63,33 @@ function fetchMovieDetails(imdbID) {
 }
 
 function fetchMovieDetails(imdbID) {
-    const details = `https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}&plot=full`;
+    const detailsUrl = `https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}&plot=full`;
 
-    fetch(details)
-        .then(res => res.json())
-        .then(
-            data => {
-                const modal = document.getElementById('movie-modal');
-                const modalDetails = document.getElementById('modal-details');
+    fetch(detailsUrl)
+        .then(response => response.json())
+        .then(data => {
+            const modal = document.getElementById('movie-modal');
+            const modalDetails = document.getElementById('modal-details');
+            modalDetails.innerHTML = `
+                <h3>${data.Title}</h3>
+                <p>Plot: ${data.Plot}</p>
+                <p>Director: ${data.Director}</p>
+                <p>Actors: ${data.Actors}</p>
+            `;
+            modal.style.display = "block";
+        })
+        .catch(error => console.error('Error fetching details:', error));
+}
 
-                modalDetails.innerHTML = `
-                    <h3>${data.Title}</h3>
-                    <p>Plot: ${data.Plot}</p>
-                    <p>Director: ${data.Director}</p>
-                    <p>Actors: ${data.Actors}</p>
-                `;
+const modal = document.getElementById("movie-modal");
+const span = document.getElementsByClassName("close")[0];
 
-                modal.style.display = "block";
-            }
-        )
-        .catch(err => console.log(err)
-        );
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
