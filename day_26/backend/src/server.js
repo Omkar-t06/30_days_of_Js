@@ -1,44 +1,32 @@
-import { WebSocketServer} from 'ws';
-import express from 'express';
-import cors from 'cors';
-import dotenv from "dotenv";
+import { WebSocketServer } from 'ws';
+import dotenv from 'dotenv';
+import http from 'http';
 
-dotenv.config({
-    path: "./env"
-});
+dotenv.config({ path: '../.env' });
 
-const app = express();
+const PORT = process.env.PORT || 8000;
 
-app.use(cors());
-app.use(express.json());
-
-app.get('/', (req,res) => {
-    res.send('Chat Application Server is running!');
-});
-
-const server = app.listen(process.env.PORT || 8000, () => {
-    console.log(`HTTP server is running on http://localhost:${process.env.PORT}`);
-}); 
-
-const wss = new WebSocketServer({server});
+const server = http.createServer()
+const wss = new WebSocketServer({ server });
 
 wss.on('connection', (ws) => {
-    console.log('A client connected');
+    console.log('New Client Connected');
 
     ws.on('message', (message) => {
         console.log(`Received: ${message}`);
-        
-        wss.clients.forEach(client => {
+        // Broadcast message to all connected clients
+        wss.clients.forEach((client) => {
             if (client.readyState === WebSocket.OPEN) {
-                client.send(message);
+                client.send(message.toString());
             }
         });
     });
 
     ws.on('close', () => {
-        console.log('A client disconnected');
+        console.log('Client Disconnected!');
     });
 });
 
-// Export the server for use in other files (if necessary)
-export default server;
+server.listen(PORT, () => {
+    console.log(`WebSocket server is running on ws://localhost:${PORT}`);
+});

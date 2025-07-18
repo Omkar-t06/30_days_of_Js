@@ -8,14 +8,17 @@
 </head>
 <body>
     <div class="chat-container">
-        <div id="chat-window" class="chat-window">
-            <!-- Message will appear here -->
+        <div class="chat-header">
+            <h2>Chat Application</h2>
         </div>
-        <div class="input-area">
-            <input type="text" id="message-input" placeholder="Type your message here...">
-            <button id="send-btn">Send</button>
+        <div class="chat-window" id="chatWindow">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
         </div>
     </div>
-    <script src="../backend/ind"></script>
+    <script src="script.js"></script>
 </body>
 </html>

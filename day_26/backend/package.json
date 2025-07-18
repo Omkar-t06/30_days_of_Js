@@ -1,26 +1,21 @@
 {
-  "name": "chat_app",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "This package is made for the porpose of 30 days Of js Chat App project",
-  "main": "index.js",
+  "description": "chat application for 30 days of JS",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/server.js"
   },
   "keywords": [
-    "JS",
-    "Web",
-    "Socket"
+    "chai-code",
+    "js",
+    "websocket"
   ],
   "author": "Omkar Tavva",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "ws": "^8.18.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.4"
+    "dotenv": "^17.2.0",
+    "ws": "^8.18.3"
   }
 }
