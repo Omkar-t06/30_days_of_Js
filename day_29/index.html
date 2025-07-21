@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai-Media</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome To Chai-Media</h1>
+    </header>
+    <main>
+        <section id="login" class="auth-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+        <section id="dashboard" style="display: none;">
+            <div id="dashboard-header">
+                <button id="logout-btn">Logout</button>
+            </div>
+            <div class="post-form-container">
+                <h2>Create Post</h2>
+                <form id="post-form">
+                    <div class="form-group">
+                        <label for="post-text">Text:</label>
+                        <textarea name="post-text" id="post-text" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-image">Image URL:</label>
+                        <input type="url" id="post-image" name="post-image">
+                    </div>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+            <div class="post-feed" id="post-feed">
+                <!-- Posts will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

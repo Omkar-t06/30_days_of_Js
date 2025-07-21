@@ -1,4 +1,4 @@
-# 30_days_of_JS
+# 30 days of JS
 ## 💻 Overview
 
 This repository contains the complete set of tasks from the **30 Days of JavaScript Challenge** by [**Chai and Code**](https://www.youtube.com/@chaiaurcode). Each day covers a key concept or project to build hands-on mastery in modern JavaScript.
