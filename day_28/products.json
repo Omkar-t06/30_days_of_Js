@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "price": 500,
+        "description": "High-quality wireless headphones with noise cancellation.",
+        "image": "https://tse4.mm.bing.net/th/id/OIP.RZjRvaO9IfDAwpD20I7e5wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+        "id": 2,
+        "name": "Smart Watch",
+        "price": 500,
+        "description": "Track your fitness with this stylish smart watch.",
+        "image": "https://m.media-amazon.com/images/I/71mRLPn333L._SL1500_.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Bluetooth Speaker",
+        "price": 500,
+        "description": "Portable speaker with excellent sound quality.",
+        "image": "https://tse2.mm.bing.net/th/id/OIP.rNxkdzB6EsyKwx3tG_OZvAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+        "id": 4,
+        "name": "Laptop Stand",
+        "price": 450,
+        "description": "Ergonomic stand for your laptop.",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/71jBQCldehL.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Gaming Mouse",
+        "price": 500,
+        "description": "High-precision gaming mouse with customizable buttons.",
+        "image": "https://m.media-amazon.com/images/I/61QY3V6A-NL.jpg"
+    },
+    {
+        "id": 6,
+        "name": "USB-C Cable",
+        "price": 400,
+        "description": "Durable 2m USB-C charging cable.",
+        "image": "https://windowsreport.com/wp-content/uploads/2019/03/USB-3.2-speed.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Backpack",
+        "price": 599,
+        "description": "Water-resistant backpack for daily use.",
+        "image": "https://www.pngall.com/wp-content/uploads/2/Backpack-Transparent-Image.png"
+    },
+    {
+        "id": 8,
+        "name": "LED Desk Lamp",
+        "price": 550,
+        "description": "Adjustable LED lamp with touch controls.",
+        "image": "https://image.lampsplus.com/is/image/cropped/60E40cropped.fpx?qlt=65&wid=1296&hei=1296&op_sharpen=1&fmt=jpeg"
+    },
+    {
+        "id": 9,
+        "name": "External Hard Drive",
+        "price": 500,
+        "description": "8GB external hard drive for extra storage.",
+        "image": "https://m.media-amazon.com/images/I/61gT1D959KL.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Wireless Keyboard",
+        "price": 599,
+        "description": "Compact wireless keyboard with quiet keys.",
+        "image": "https://tse1.mm.bing.net/th/id/OIP.QlNi0IBRgYOTlqQf_uoVBQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+    }
+]
