@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar for user information -->
+        <aside class="sidebar">
+            <h2>User Info</h2>
+            <div id="user-info">
+                <div id="auth-forms">
+                    <!-- Login Form -->
+                    <div id="login-form" class="auth-form">
+                        <h3>Login</h3>
+                        <form id="login">
+                            <label for="login-email" class="sr-only">Email</label>
+                            <input type="email" id="login-email" placeholder="Email" required aria-required="true">
+                            <label for="login-password" class="sr-only">Password</label>
+                            <input type="password" id="login-password" placeholder="Password" required aria-required="true">
+                            <button type="submit">Login</button>
+                        </form>
+                        <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+                    </div>
+                    <!-- Registration Form -->
+                    <div id="register-form" class="auth-form" style="display: none;">
+                        <h3>Register</h3>
+                        <form id="register">
+                            <label for="register-username" class="sr-only">Username</label>
+                            <input type="text" id="register-username" placeholder="Username" required aria-required="true">
+                            <label for="register-email" class="sr-only">Email</label>
+                            <input type="email" id="register-email" placeholder="Email" required aria-required="true">
+                            <label for="register-password" class="sr-only">Password</label>
+                            <input type="password" id="register-password" placeholder="Password" required aria-required="true">
+                            <button type="submit">Register</button>
+                        </form>
+                        <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+                    </div>
+                </div>
+                <div id="logged-in-info" style="display: none;">
+                    <p>Logged in as: <span id="current-username"></span></p>
+                </div>
+            </div>
+            <a href="profile.html" class="redirect-link"><button id="profile-btn" style="display: none;">View Profile</button></a>
+            <button id="logout-btn" style="display: none;">Logout</button>
+            <button id="theme-toggle">Toggle Theme</button>
+            <div id="notifications">
+                <h3>Notifications</h3>
+                <ul id="notification-list"></ul>
+            </div>
+        </aside>
+
+        <!-- Main content area -->
+        <main class="main-content">
+            <!-- Post creation form -->
+            <section class="post-form">
+                <h2>Create a Post</h2>
+                <form id="post-form">
+                    <label for="post-text" class="sr-only">What's on your mind?</label>
+                    <textarea id="post-text" placeholder="What's on your mind?" required aria-required="true"></textarea>
+                    <label for="post-image" class="sr-only">Upload an image</label>
+                    <input type="file" id="post-image" accept="image/*">
+                    <button type="submit" id="post-submit">Post <span class="spinner" style="display: none;"></span></button>
+                </form>
+            </section>
+
+            <!-- Post feed -->
+            <section class="post-feed">
+                <h2>Feed</h2>
+                <div id="posts"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

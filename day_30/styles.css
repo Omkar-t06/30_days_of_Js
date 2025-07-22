@@ -1,0 +1,341 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #fff;
+    --text-color: #333;
+    --border-color: #ddd;
+    --button-bg: #1877f2;
+    --button-hover-bg: #165aa7;
+    --notification-bg: #f9f9f9;
+    --liked-color: #e0245e;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --card-bg: #2c2c2c;
+    --text-color: #e0e0e0;
+    --border-color: #444;
+    --button-bg: #1a73e8;
+    --button-hover-bg: #1557b0;
+    --notification-bg: #333;
+    --liked-color: #f06292;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-right: 20px;
+    transition: transform 0.2s;
+}
+
+.sidebar:hover {
+    transform: translateY(-2px);
+}
+
+.sidebar button {
+    width: 100%;
+    transition: transform 0.2s;
+}
+
+.sidebar button:hover {
+    transform: scale(1.05);
+}
+
+.redirect-link {
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-form, .post-feed, .profile-container {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.post-form:hover, .post-feed:hover {
+    transform: translateY(-2px);
+}
+
+.post-form h2, .post-feed h2, .sidebar h2, .sidebar h3, .profile-container h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+#post-form textarea {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s;
+}
+
+#post-form textarea:focus, .auth-form input:focus, #posts .post .comment-form input:focus {
+    border-color: var(--button-bg);
+    outline: none;
+}
+
+#post-form input[type="file"] {
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+#post-form button {
+    position: relative;
+    background-color: var(--button-bg);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#post-form button:hover {
+    transform: scale(1.05);
+}
+
+#post-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#posts .post {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.5s ease-in;
+}
+
+#posts .post img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-top: 10px;
+    object-fit: cover;
+}
+
+#posts .post .post-username {
+    font-weight: bold;
+    color: var(--button-bg);
+}
+
+#posts .post .post-timestamp {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+#posts .post .post-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#posts .post .like-btn.liked {
+    background-color: var(--liked-color);
+}
+
+#posts .post .post-actions button {
+    transition: transform 0.2s;
+}
+
+#posts .post .post-actions button:hover {
+    transform: scale(1.05);
+}
+
+#posts .post .comment-form {
+    margin-top: 10px;
+}
+
+#posts .post .comment-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+#posts .post .comments {
+    margin-top: 10px;
+}
+
+#posts .post .comments .comment {
+    font-size: 0.9em;
+    padding: 5px 0;
+    border-top: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease-in;
+}
+
+#notifications ul {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#notifications li {
+    padding: 10px;
+    background-color: var(--notification-bg);
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#notifications li:hover {
+    background-color: var(--button-bg);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+#notifications li.new {
+    background-color: var(--button-bg);
+    color: #fff;
+}
+
+#notifications .no-notifications {
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+    background-color: var(--button-bg);
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s;
+}
+
+.auth-form a {
+    color: var(--button-bg);
+    text-decoration: none;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+.auth-form {
+    margin-bottom: 15px;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.profile-container img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile-container input, .profile-container button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}

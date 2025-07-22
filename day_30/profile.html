@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <div id="profile-info">
+            <img id="profile-picture" src="" alt="Profile Picture" style="display: none;">
+            <p><strong>Username:</strong> <span id="profile-username"></span></p>
+            <p><strong>Email:</strong> <span id="profile-email"></span></p>
+        </div>
+        <form id="profile-form">
+            <h3>Edit Profile</h3>
+            <input type="text" id="edit-username" placeholder="New Username">
+            <input type="email" id="edit-email" placeholder="New Email">
+            <input type="password" id="edit-password" placeholder="New Password">
+            <input type="file" id="edit-profile-picture" accept="image/*">
+            <button type="submit">Save Changes</button>
+        </form>
+        <a href="index.html" class="redirect-link"><button>Back to Dashboard</button></a>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>
